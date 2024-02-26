@@ -5,10 +5,11 @@
 
 # Запуск
 Для запуска обучения алгоритма DDPG:
-`python
+```python
 python3 train_ddpg.py
-`
+```
+
 Для запуска обучения алгоритма PPO:
-`python
+```python
 python3 train_ppo.py
-`
+```
