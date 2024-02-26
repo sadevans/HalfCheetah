@@ -13,7 +13,7 @@ from ppo.Network import *
 
 
 
-def make_ppo_runner(env, policy, num_runner_steps=1024,
+def make_ppo_runner(env, policy, num_runner_steps=2048,
                     gamma=0.99, lambda_=0.95, 
                     num_epochs=16, num_minibatches=64):
     """ Creates runner for PPO algorithm. """
@@ -77,7 +77,7 @@ if __name__ == '__main__':
     grad_norms = []
     advantages = []
     ppo_losses = []
-    for i in trange(90_000):
+    for i in trange(100_000):
         trajectory = runner.get_next()
         ppo.step(trajectory)
         value_losses.append(ppo.values_np)
