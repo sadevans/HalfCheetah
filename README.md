@@ -16,3 +16,8 @@ python3 train_ddpg.py
 ```python
 python3 train_ppo.py
 ```
+
+# Дальнейшее развитие
+- TRPO
+- SAC
+- A3C
