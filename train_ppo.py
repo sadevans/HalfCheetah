@@ -36,7 +36,7 @@ def plot_tools(legend, position, data_y):
     plt.ticklabel_format(axis="x", style="sci", scilimits=(0,0))
 
 
-def evaluate(env2, agent, n_games=1, render=False):
+def evaluate(env, agent, n_games=1, render=False):
     """Plays an a game from start till done, returns per-game rewards """
     agent.train(False)
     game_rewards = []
@@ -91,7 +91,7 @@ if __name__ == '__main__':
             num_steps.append(runner.runner.step_var)
             
             
-            rewards.append(np.mean(evaluate(env2, model, n_games=1)))
+            rewards.append(np.mean(evaluate(env, model, n_games=1)))
             
             plt.figure(figsize=[20,10])
             
