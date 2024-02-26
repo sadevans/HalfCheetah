@@ -62,7 +62,7 @@ def evaluate(env2, agent, n_games=1, render=False):
 
 
 if __name__ == '__main__':
-    env = gym.make("HalfCheetah-v2")
+    env = gym.make('HalfCheetah-v4', ctrl_cost_weight=0.1, reset_noise_scale=0.1, exclude_current_positions_from_observation=True)
     model = Network(shape_in=17, action_shape=6)
     policy = Policy(model)
     runner = make_ppo_runner(env, policy)
@@ -108,3 +108,5 @@ if __name__ == '__main__':
             plot_tools('Advantages', 7, advantages)
 
             plt.show()
+
+    env.close()
